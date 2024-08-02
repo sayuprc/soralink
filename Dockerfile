@@ -4,4 +4,4 @@ WORKDIR /app
 
 USER node
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
