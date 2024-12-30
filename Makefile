@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: build
 build: ## Build docker image
-	docker build -t soralink:20 .
+	docker build -t soralink:22 .
 
 .PHONY: up
 up: ## Start the container
