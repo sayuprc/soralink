@@ -1,6 +1,6 @@
 services:
   node:
-    image: soralink:20
+    image: soralink:22
     environment:
       LANG: ja_JP.UTF-8
       TZ: Asia/Tokyo
