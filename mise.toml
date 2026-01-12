@@ -1,0 +1,11 @@
+[tools]
+node = "22"
+"npm:yarn" = "latest"
+
+[tasks.install]
+description = "Install packages"
+run = "yarn"
+
+[tasks.dev]
+description = "Launch the development server"
+run = "yarn dev"
