@@ -1,4 +1,15 @@
-/* .fc-daygrid-day-frame { cursor: pointer; } */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  text-align: center;
+}
 
 /* 土曜日 */
 .fc-day-sat .fc-daygrid-day-top,
@@ -14,7 +25,7 @@
   color: red;
 }
 
-/* 当月以外の日(月カレンダーに一緒に表示される前後の月) */
+/* 当月以外の日 */
 .fc-day-other .fc-daygrid-day-top,
 .fc-scrollgrid-sync-inner .fc-col-header-cell-cushion,
 .fc-list-day-cushion {
