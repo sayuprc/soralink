@@ -10,7 +10,7 @@
     "fix": "biome check --write ."
   },
   "dependencies": {
-    "@fullcalendar/core": "^6.1.20",
+    "@fullcalendar/core": "^7.0.0",
     "@fullcalendar/daygrid": "^6.1.20",
     "date-fns": "^4.1.0"
   },
