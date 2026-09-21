@@ -1,6 +1,3 @@
-import { Calendar, type EventClickArg, type EventInput, type EventSourceFuncArg } from '@fullcalendar/core'
-import jaLocale from '@fullcalendar/core/locales/ja'
-import dayGridPlugin from '@fullcalendar/daygrid'
 import {
   addDays,
   addMonths,
@@ -16,6 +13,13 @@ import {
   previousThursday,
   startOfMonth,
 } from 'date-fns'
+import { Calendar, type EventClickInfo, type EventInput, type EventSourceFuncInfo } from 'fullcalendar'
+import dayGridPlugin from 'fullcalendar/daygrid'
+import jaLocale from 'fullcalendar/locales/ja'
+import classicThemePlugin from 'fullcalendar/themes/classic'
+import 'fullcalendar/skeleton.css'
+import 'fullcalendar/themes/classic/theme.css'
+import 'fullcalendar/themes/classic/palette.css'
 import './styles.css'
 
 const calendarElement = document.querySelector<HTMLElement>('#calendar')
@@ -27,7 +31,7 @@ if (!calendarElement) {
 const makeTwitterUrl = (start: string, end: string): string =>
   encodeURI(`https://twitter.com/search?f=tweets&vertical=default&q=from:@tokino_sora since:${start} until:${end}`)
 
-const moveToTwitter = (event: EventClickArg): void => {
+const moveToTwitter = (event: EventClickInfo): void => {
   event.jsEvent.preventDefault()
 
   if (event.event.url) {
@@ -46,7 +50,7 @@ const getEachWeeks = (start: Date, end: Date): Date[][] => {
   )
 }
 
-const makeEvents = (info: EventSourceFuncArg, successCallback: (events: EventInput[]) => void): void => {
+const makeEvents = (info: EventSourceFuncInfo, successCallback: (events: EventInput[]) => void): void => {
   const current =
     format(info.start, 'yyyy-MM-dd') === '2017-09-07' || getDate(info.start) === 1
       ? info.start
@@ -75,9 +79,9 @@ const calendar = new Calendar(calendarElement, {
     year: 'numeric',
     month: '2-digit',
   },
-  dayCellContent: (info) => info.dayNumberText.replace('日', ''),
+  dayCellTopContent: (info) => info.dayNumberText.replace('日', ''),
   validRange: () => ({ start: '2017-09-07', end: new Date() }),
-  plugins: [dayGridPlugin],
+  plugins: [dayGridPlugin, classicThemePlugin],
   initialView: 'dayGridMonth',
   locales: [jaLocale],
   locale: 'ja',
