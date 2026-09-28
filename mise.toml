@@ -1,4 +1,4 @@
 [tools]
 node = "24"
-pnpm = "11.22.0"
+pnpm = "11.27.1"
 viteplus = "0.3.3"
